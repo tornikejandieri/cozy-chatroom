@@ -2,6 +2,8 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import React, { useState } from "react"
 import { auth, db } from "../firebase"
 
+import { Input, Button, Spacer, Card, Row } from "@nextui-org/react"
+
 function SendMessage({ scroll }) {
   const [inputText, setInputText] = useState("")
 
@@ -25,13 +27,23 @@ function SendMessage({ scroll }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type='text'
-        placeholder='Aa'
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      />
-      <button type='submit'>Send</button>
+      <Spacer />
+      <Card.Divider />
+      <Row justify='center' align='center'>
+        <Input
+          css={{ marginTop: "5px" }}
+          clearable
+          size='lg'
+          type='text'
+          placeholder='Aa'
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        />
+
+        <Button shadow color='success' size='sm' type='submit'>
+          Send
+        </Button>
+      </Row>
     </form>
   )
 }

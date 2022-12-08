@@ -1,24 +1,58 @@
 import React from "react"
 import { auth } from "../firebase"
 
-function ChatMessage({ message }) {
-  const styleLeft = {
-    display: "flex",
-    flexDirection: "flex-end",
-  }
-  const styleRight = {
-    display: "flex",
-    flexDirection: "flex-start",
-  }
+import { Card, Text } from "@nextui-org/react"
 
-  const messageClass =
-    message.uid === auth.currentUser.uid ? `${styleLeft}` : `${styleRight}`
+function ChatMessage({ message }) {
+  //   message.uid === auth.currentUser.uid ?
+
+  if (message.uid === auth.currentUser.uid) {
+    return (
+      <div>
+        <div>
+          <Card
+            isHoverable
+            variant='bordered'
+            css={{
+              mw: "240px",
+              marginLeft: "120px",
+              marginTop: "5px",
+              marginBottom: "5px",
+            }}
+          >
+            <Card.Body>
+              <Text h6 size={15}>
+                {message.name}
+              </Text>
+              <Card.Divider />
+              <p>{message.text}</p>
+            </Card.Body>
+          </Card>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div>
-      <div className={`${messageClass}`}>
-        <p>{message.name}</p>
-        <p>{message.text}</p>
+      <div>
+        <Card
+          isHoverable
+          variant='bordered'
+          css={{
+            mw: "240px",
+            margin: "5px",
+            backgroundColor: "$purple300",
+          }}
+        >
+          <Card.Body>
+            <Text h6 size={15}>
+              {message.name}
+            </Text>
+            <Card.Divider />
+            <p>{message.text}</p>
+          </Card.Body>
+        </Card>
       </div>
     </div>
   )
