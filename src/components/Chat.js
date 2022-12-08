@@ -25,7 +25,9 @@ function Chat() {
       <main style={{ position: "relative" }}>
         {messages &&
           messages.map((message) => {
-            return <ChatMessage key={message.id} message={message} />
+            return (
+              <ChatMessage key={message.id} message={message} scroll={scroll} />
+            )
           })}
         <div ref={scroll}></div>
 

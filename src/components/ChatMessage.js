@@ -3,7 +3,7 @@ import { auth } from "../firebase"
 
 import { Card, Text } from "@nextui-org/react"
 
-function ChatMessage({ message }) {
+function ChatMessage({ message, scroll }) {
   //   message.uid === auth.currentUser.uid ?
 
   if (message.uid === auth.currentUser.uid) {
@@ -27,6 +27,7 @@ function ChatMessage({ message }) {
               <Card.Divider />
               <p>{message.text}</p>
             </Card.Body>
+            <div ref={scroll}></div>
           </Card>
         </div>
       </div>
