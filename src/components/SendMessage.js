@@ -35,6 +35,7 @@ function SendMessage({ scroll }) {
           clearable
           size='lg'
           type='text'
+          aria-labelledby='message-input'
           placeholder='Aa'
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
