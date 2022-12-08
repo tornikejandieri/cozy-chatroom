@@ -27,9 +27,9 @@ function ChatMessage({ message, scroll }) {
               <Card.Divider />
               <p>{message.text}</p>
             </Card.Body>
-            <div ref={scroll}></div>
           </Card>
         </div>
+        <div ref={scroll}></div>
       </div>
     )
   }
@@ -55,6 +55,7 @@ function ChatMessage({ message, scroll }) {
           </Card.Body>
         </Card>
       </div>
+      <div ref={scroll}></div>
     </div>
   )
 }
