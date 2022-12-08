@@ -5,7 +5,7 @@ import { Card, Text } from "@nextui-org/react"
 
 function ChatMessage({ message, scroll }) {
   //   message.uid === auth.currentUser.uid ?
-
+  scroll.current.scrollIntoView({ behaviour: "smooth" })
   if (message.uid === auth.currentUser.uid) {
     return (
       <div>
