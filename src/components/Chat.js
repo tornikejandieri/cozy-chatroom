@@ -27,6 +27,7 @@ function Chat() {
           messages.map((message) => {
             return <ChatMessage key={message.id} message={message} />
           })}
+        <div ref={scroll}></div>
 
         <SendMessage scroll={scroll} />
       </main>

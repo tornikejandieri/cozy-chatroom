@@ -10,7 +10,7 @@ function NavBar() {
   return (
     <div>
       <h1>ChatRoom</h1>
-      {user ? <LogOut /> : <SignIn />}
+      {user ? <LogOut /> : null}
     </div>
   )
 }
