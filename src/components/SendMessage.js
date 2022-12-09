@@ -2,7 +2,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import React, { useState } from "react"
 import { auth, db } from "../firebase"
 
-import { Input, Button, Spacer, Card, Row } from "@nextui-org/react"
+import { Input, Spacer, Card, Row } from "@nextui-org/react"
 import { SendButton } from "./SendButton"
 import { SendIcon } from "./SendIcon"
 
@@ -49,10 +49,6 @@ function SendMessage({ scroll }) {
             </SendButton>
           }
         />
-
-        {/* <Button shadow color='success' size='sm' type='submit'>
-          Send
-        </Button> */}
       </Row>
     </form>
   )

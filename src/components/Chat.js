@@ -1,8 +1,8 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore"
 import React, { useEffect, useRef, useState } from "react"
 import { db } from "../firebase"
+import ChatLayout from "./ChatLayout"
 import ChatMessage from "./ChatMessage"
-import SendMessage from "./SendMessage"
 
 function Chat() {
   const [messages, setMessages] = useState([])
@@ -21,7 +21,7 @@ function Chat() {
   }, [])
 
   return (
-    <>
+    <ChatLayout scroll={scroll}>
       <main style={{ position: "relative" }}>
         {messages &&
           messages.map((message) => {
@@ -30,10 +30,8 @@ function Chat() {
             )
           })}
         <div ref={scroll}></div>
-
-        <SendMessage scroll={scroll} />
       </main>
-    </>
+    </ChatLayout>
   )
 }
 
