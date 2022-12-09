@@ -15,7 +15,7 @@ function ChatMessage({ message, scroll }) {
             variant='bordered'
             css={{
               mw: "240px",
-              marginLeft: "120px",
+              marginLeft: "20%",
               marginTop: "5px",
               marginBottom: "5px",
             }}

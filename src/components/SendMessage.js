@@ -3,6 +3,8 @@ import React, { useState } from "react"
 import { auth, db } from "../firebase"
 
 import { Input, Button, Spacer, Card, Row } from "@nextui-org/react"
+import { SendButton } from "./SendButton"
+import { SendIcon } from "./SendIcon"
 
 function SendMessage({ scroll }) {
   const [inputText, setInputText] = useState("")
@@ -33,17 +35,24 @@ function SendMessage({ scroll }) {
         <Input
           css={{ marginTop: "5px" }}
           clearable
+          autoFocus
           size='lg'
           type='text'
           aria-labelledby='message-input'
           placeholder='Aa'
+          contentRightStyling={false}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
+          contentRight={
+            <SendButton>
+              <SendIcon />
+            </SendButton>
+          }
         />
 
-        <Button shadow color='success' size='sm' type='submit'>
+        {/* <Button shadow color='success' size='sm' type='submit'>
           Send
-        </Button>
+        </Button> */}
       </Row>
     </form>
   )
